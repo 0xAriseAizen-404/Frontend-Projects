@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #d5d5d5;
+        }
+
+        .wrapper {
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .img-wrapper img {
+            margin: 1rem;
+            width: 300px;
+            height: 300px;
+            border-radius: .5rem;
+            border: 2px solid #212121;
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, .5),
+                -5px -5px 10px 0 rgba(255, 255, 255, 1);
+        }
+
+        .btn {
+            padding: .75rem 1rem;
+            border-radius: .25rem;
+            border: none;
+            outline: none;
+            color: #fff;
+            background-color: orange;
+            font-size: 18px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: darkorange;
+                transition: .3s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Random Images Generator</h1>
+        <div class="img-wrapper">
+        </div>
+        <button class="btn">Load More...</button>
+    </div>
+    <script>
+        const imgWrapperEl = document.querySelector('.wrapper .img-wrapper');
+        function updatePictures() {
+            for (let i = 1; i < 10; ++i) {
+                const imgEl = document.createElement('img');
+                imgEl.src = `https://picsum.photos/300?random=${i}`; // Lorem Picsum in searchbar
+                imgWrapperEl.appendChild(imgEl);
+            }
+        }
+        window.addEventListener('load', updatePictures);
+        const loadBtn = document.querySelector('.btn');
+        loadBtn.addEventListener('click', updatePictures);
+    </script>
+</body>
+
+</html>
