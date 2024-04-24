@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Poppins:wght@500&family=Roboto+Slab&family=Roboto:ital@0;1&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Agdasima', sans-serif;
+}
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #212121;
+}
+.headings{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  margin: 5rem 0;
+}
+.headings h1{
+  font-size: 3rem;
+}
+.headings h1 span{
+  color: red;
+}
+.headings h3{
+  font-size: 1.5rem;
+}
+.cards-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 700px;
+  height: 250px;
+}
+.cards-container .card{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.cards-container .card .image{
+  height: 100%;
+}
+.cards-container .card .image img{
+  height: 100%;
+}
+.cards-container .card .content{
+  height: 100%;
+  font-weight: 600;
+  background-color: #eee;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content .btn.btn-buy{
+  padding: 5px 10px;
+  background-color: #212121;
+  color: #fff;
+  border: none;
+  &:hover{
+    cursor: pointer;
+  }
+}
