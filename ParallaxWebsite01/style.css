@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    font-size: 16px;
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.8em;
+}
+.pimg1, .pimg2, .pimg3{
+    background-position: center;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+}
+.pimg1{
+    background-image: url("david-marcu-78A265wPiO4-unsplash.jpg"); 
+}
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: black;
+}
+.textBg{
+    background-color: #313534;
+    color: white;
+    padding: 20px;
+}
+.section-light{
+    padding: 50px 80px;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #666;
+}
+.section-dark{
+    padding: 50px 80px;
+    text-align: center;
+    background-color: #282e34;
+    color: #ddd;
+}
+.pimg2{
+    background-image: url('neom-w-yuRFSkbVw-unsplash.jpg');
+    min-height: 400px;
+}
+.pimg3{
+    background-image: url('qingbao-meng-01_igFr7hd4-unsplash.jpg');
+    min-height: 400px;
+}
