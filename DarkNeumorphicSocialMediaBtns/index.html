@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial";
+}
+body{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #091921;
+}
+.icons li{
+  position: relative;
+  background: #091921;
+  list-style: none;
+  display: inline-flex;
+  margin: 0 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -1px -1px 3px rgba(255,255,255,0.2),
+    2px 2px 6px rgba(0,0,0,0.8);
+  color: #eee;
+}
+.icons li i{
+  font-size: 30px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.icons li.active::after{
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: #091921;
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 3px rgba(255,255,255,0.2),
+    inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+.icons li.active i{
+  color: cyan;
+/*   color: rgb(255, 54, 54); */
+}
+    </style>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/96a2e1e50a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <div class="icons">
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-youtube"></i></li>
+        <li><i class="fab fa-github"></i></li>
+    </div>
+    <script>
+        $('.icons li').click(function () {
+                $(this).toggleClass("active");
+                $('.icons li i').toggleClass("active");
+            });
+    </script>
+</body>
+</html>
