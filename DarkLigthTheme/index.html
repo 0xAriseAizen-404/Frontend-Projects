@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --bg-color: #FFF;
+            --text-color: #212121;
+        }
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 30px;
+        }
+        button{
+            border-radius: 12px;
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.3s linear;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="light-theme">Light Theme</button>
+        <button id="dark-theme">Dark Theme</button>
+    </div>
+    <script>
+        const lightTheme = document.getElementById("light-theme");
+        const darkTheme = document.getElementById("dark-theme");
+        lightTheme.addEventListener('click',() =>{
+            document.documentElement.style.setProperty('--bg-color',"#FFF");
+            document.documentElement.style.setProperty('--text-color',"#212121");
+        });
+        darkTheme.addEventListener('click',() =>{
+            document.documentElement.style.setProperty('--bg-color',"#212121");
+            document.documentElement.style.setProperty('--text-color',"#FFF");
+        });
+    </script>
+</body>
+</html>
