@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .container {
+            width: 80%;
+            margin: 10%;
+            border-top: 1px solid #000;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .login-container {
+            width: 330px;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-container>span.caption-title {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .login-container form {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container .form-group-ele {
+            position: relative;
+            margin: .5rem 0;
+            width: 100%;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: .75rem 1rem;
+            border-radius: 8px;
+            border: 2px solid #F0F0F1;
+
+            &::placeholder {
+                color: #656465;
+            }
+
+            &:focus,
+            &:active {
+                    outline: none;
+            }
+        }
+
+        .login-container input[type="password"]+span {
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            font-size: .75rem;
+            color: #CFCFCE;
+        }
+
+        .login-container .btn.btn-submit {
+            color: #fff;
+            background-color: #000;
+            padding: .9rem 3rem;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+
+        .other-links {  
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .other-links>p {
+            margin: .25rem 0;
+            color: #909190;
+        }
+
+        .other-links a {
+            color: #2D2D2D;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            color: #909190;
+        }
+
+        .footer span {
+            display: block;
+            margin: .25rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>flodesk</h1>
+            <span class="caption-title">Welcome back!</span>
+            <form name="login-form" action="">
+                <div class="form-group-ele">
+                    <input type="email" name="myEmail" id="myEmailId" placeholder="Enter your email">
+                </div>
+                <div class="form-group-ele">
+                    <input type="password" name="myPass" id="myPassId" placeholder="Enter your password">
+                    <span class="show-pass">Show</span>
+                </div>
+                <button class="btn btn-submit">
+                    Log in to Flodesk
+                </button>
+            </form>
+            <div class="other-links">
+                <p>Not a member? <a href="#">Sign up</a></p>
+                <p><a href="#">Forgot your password?</a></p>
+            </div>
+            <div class="footer">
+                <span>By continuing, you agree to Flodesk's <a href="#">terms</a>
+                </span>
+                <span>and acknowledge you've read our <a href="#">privacy policy</a></span>.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            margin: 5rem 0;
+            width: 554px;
+            border-radius: 1.1rem 1.1rem 1rem 1rem;
+            border: 2px solid #DADCE0;
+        }
+
+        .container img {
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .container span {
+            display: block;
+        }
+
+        .container .details {
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .container span.subscribe-plan {
+            color: #5E6267;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .container span.subscribe-plan i {
+            font-size: 22px;
+            margin-right: 1rem;
+        }
+
+        .container span.heading {
+            font-size: 2rem;
+        }
+
+        .container p.description {
+            line-height: 35px;
+            color: #5E6267;
+            font-size: 26px;
+        }
+
+        .container .details a {
+            text-decoration: none;
+            font-size: 22px;
+            color: #538EED;
+            font-weight: 600;
+            align-self: flex-start;
+            padding: 1rem 2.5rem;
+            border: 2px solid #DADCE0;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <div class="container">
+        <img src="https://picsum.photos/550/300.jpg" alt="">
+        <div class="details">
+            <span class="subscribe-plan">
+                <i class="fa-solid fa-lock"></i>
+                subscribe to any plan</span>
+            <span class="heading">Get more features in Google photos</span>
+            <p class="description">
+                Bring your favourite moments to life with more Google Photos editing tools for Android and iOS,
+                including
+                Magic Eraser. Subject to eligibility.
+            </p>
+            <a href="#">View details</a>
+        </div>
+    </div>
+</body>
+
+</html>

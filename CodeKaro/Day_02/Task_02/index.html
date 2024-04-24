@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #212121;
+        }
+
+        .card-container {
+            width: 550px;
+            height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1544791577-6697d1dede5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHN1biUyMGFuZCUyMHNlYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .btn.btn-explore {
+            margin-bottom: 2rem;
+            padding: .75rem 1.5rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <h2>Explore the diversities in Bali</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolores molestias quo repellendus sequi!
+            Cumque.</p>
+        <button class="btn btn-explore">Explore Now</button>
+    </div>
+</body>
+
+</html>
