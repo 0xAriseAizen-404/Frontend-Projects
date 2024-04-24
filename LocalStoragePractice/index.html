@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStoragePractice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" id="myForm" name="myForm">
+            <div class="form-group-ele">
+                <label for="sName">Student Name : </label>
+                <input type="text" id="sName" name="name">
+            </div>
+            <div class="form-group-ele">
+                <label for="sRollNo">Student Roll No : </label>
+                <input type="number" name="rollno" id="sRollNo" min="1" resize="none">
+            </div>
+            <div class="form-group-ele">
+                <label for="sAge">Student Age : </label>
+                <input type="number" name="age" id="sAge" min="15">
+            </div>
+            <div class="form-group-ele">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="student-results">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+</body>
+</html>
