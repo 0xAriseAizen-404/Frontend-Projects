@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root{
+  --nav-load-time: 300ms;
+  --nav-link-load-time: 500ms;
+  --article-load-delay: 800ms;
+}
+body{
+  width: 100vw;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+header{
+  height: 50px;
+  width: 100%;
+}
+header nav{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: #4070F6;
+  font-size: 1.5rem;
+  animation: nav-load var(--nav-load-time) ease-in-out;
+}
+header nav ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header nav ul li{
+  height: 100%;
+  padding: 0 10px;
+  list-style: none;
+  line-height: 50px;
+  animation: nav-link-load var(--nav-link-load-time) ease-in-out forwards;
+  transform: scale(0);
+}
+header nav ul li a{
+  color: #f5f5f5;
+}
+section{
+  margin: 2rem;
+}
+section h1{
+  margin-bottom: 1.5rem;
+}
+header nav li:hover{
+  background-color: #ffffff44;
+}
+@keyframes nav-load{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes nav-link-load{
+  0%{
+    transform: scale(0);
+  }
+  90%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+nav ul li:first-child{
+  animation-name: nav-first-link-load;
+  transform: translateX(-1000%);
+}
+nav ul li:last-child{
+  animation-name: nav-last-link-load;
+  transform: translateX(1000%);
+}
+@keyframes nav-first-link-load{
+  0%{
+    transform: translateX(-1000%);
+  }
+  90%{
+    transform: translateX(50%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes nav-last-link-load{
+  0%{
+    transform: translateX(1000%);
+  }
+  90%{
+    transform: translateX(-50%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+h1,p {
+  animation: article-load 300ms ease-in var(--article-load-delay) forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+p{
+  animation-delay: 1s;
+}
+@keyframes article-load{
+  0%{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Main Stroy</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae inventore soluta in nulla expedita amet
+                minima ratione assumenda accusamus, nesciunt consequatur? Animi dolore culpa id delectus exercitationem
+                aperiam blanditiis aliquid.
+                Voluptatibus quos quasi blanditiis, adipisci eius culpa quam, iure quia quaerat maiores dolor, accusantium
+                atque quo tempora nihil earum? Aut sunt velit sapiente in ex accusantium cum recusandae non accusamus.
+                Ipsa inventore debitis quis tempore, ex quod autem ab ipsum beatae consectetur quos voluptatibus voluptatum
+                ratione quibusdam illo? Perspiciatis magni iusto quis fugiat accusantium. In porro aperiam exercitationem
+                sunt commodi!
+                Sunt itaque nemo odio, voluptate possimus quibusdam obcaecati! Molestiae vel natus voluptas dolorum odit
+                veniam, quisquam corrupti sint quod quasi incidunt, laborum accusamus doloremque modi sit aliquam assumenda
+                excepturi ea!
+                Alias enim ullam quia culpa quod soluta libero ipsam eveniet magni! Consectetur fugiat commodi accusantium
+                voluptates, dicta iure. Labore incidunt blanditiis alias exercitationem eligendi tempore consectetur ipsam
+                voluptatibus magnam facilis?
+                Sit veniam maiores eaque reprehenderit ab nobis earum minus possimus, ipsam, quibusdam tempora. Adipisci
+                obcaecati pariatur quidem tempora necessitatibus delectus, ducimus at. Tempore accusantium voluptas laborum
+                eius ullam odit amet!
+                Dolorum quisquam aperiam ipsa? Impedit accusantium qui quo, dolorem dolorum blanditiis minus maiores
+                provident veritatis dolore natus nam commodi beatae sed, aliquam, quis deleniti nihil itaque. Exercitationem
+                voluptatem culpa eaque!
+                Quos reprehenderit iure perferendis in id illo possimus quae esse asperiores atque aut odio velit molestiae
+                corporis, deserunt, blanditiis optio sit obcaecati cum rem! A magnam aliquam deleniti sit molestias.
+                Obcaecati delectus odio quas eos alias deleniti dolor tempore? Maxime architecto et illo consequatur! In,
+                repellat esse. Voluptates deserunt blanditiis et, iure modi maxime ut sed saepe reprehenderit maiores rerum?
+                Ut harum nisi aspernatur, commodi magnam amet excepturi maiores consectetur saepe aperiam enim autem earum,
+                quisquam alias. Fugiat aspernatur animi doloremque quidem nam, necessitatibus reprehenderit, distinctio
+                ullam totam ex consequatur.
+            </p>
+        </section>
+        <section>
+            <h1>Another Stroy</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quae illum praesentium, a consequuntur
+                sapiente, adipisci eaque iusto esse id error officia recusandae inventore hic at soluta earum aut
+                repudiandae.
+                Blanditiis facere, sed nobis officia magni repudiandae quidem nulla alias amet nisi iure aspernatur
+                architecto nesciunt hic cumque tempora ipsum non vel, eligendi corporis. Blanditiis neque praesentium
+                temporibus? Autem, facere.
+                Necessitatibus doloremque, laboriosam sed officia quis dolorem, maiores numquam voluptatum inventore quod
+                et, rerum debitis deserunt nihil consequuntur. Tenetur necessitatibus, possimus libero ipsum repellendus
+                eligendi quisquam ea quos doloribus voluptatibus!
+                Sint officiis quod natus, fugit rem labore placeat aspernatur iusto odio repudiandae sapiente omnis culpa
+                reiciendis facere voluptas incidunt molestiae, possimus animi maiores veniam dolorem suscipit. Nesciunt
+                architecto enim ab.
+                Ullam maxime qui suscipit non nostrum! Labore quaerat id hic temporibus neque, asperiores fugit quibusdam
+                atque eligendi blanditiis nostrum maxime laborum perferendis sint libero iusto at quae, unde vitae
+                similique.</p>
+        </section>
+    </main>
+</body>
+</html>
