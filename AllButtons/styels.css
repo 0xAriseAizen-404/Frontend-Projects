@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --primary-color:#007BFF;
+    --secondar-color: rgb(108,117,125);
+    --success-color: rgb(40,167,69);
+    --danger-color: rgb(220,53,69);
+    --warning-color: rgb(255,193,7);
+    --info-color: rgb(23,162,184);
+    --dark-color: rgb(52,58,64);
+  }
+  body{
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+  }
+  h2{
+    text-align: center;
+    margin: 1rem;
+  }
+  .btn{
+  /*   padding: 10px 20px; */
+    padding: 0.5em 1em;
+    margin: 1em;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    --border-size: 2px;
+  }
+  
+  
+  /* Web Dev Simplified Button Animations Video */
+  
+  
+  /* BORDER-POP */
+  
+  /* .btn.btn-border-pop:hover::after{
+    content:'';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    left: -5px;
+    bottom: -5px;
+    border: 2px solid #e2e2e2;
+    border-radius: 4px;
+  } */
+  .btn.btn-border-pop::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    --border-color: #e2e2e2;
+  /*   --border-color: #4070F6; */
+    border: var(--border-size) solid var(--border-color);
+    border-radius: 4px;
+    transition: top,right,left,bottom, 0.1s ease-in-out;
+  }
+  .btn.btn-border-pop:hover::after,
+  .btn.btn-border-pop:focus::after{
+    top: calc(var(--border-size)*-2);
+    left: calc(var(--border-size)*-2);
+    right: calc(var(--border-size)*-2);
+    bottom: calc(var(--border-size)*-2);
+  }
+  
+  /* BACKGROUND-SLIDE */
+  
+  .btn.btn-background-slide::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #4070F6;
+    border-radius: 4px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+  }
+  .btn.btn-background-slide:hover::before,
+  .btn.btn-background-slide:focus::before{
+    transform: scaleX(1);
+  }
+  .btn.btn-background-slide{
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+  }
+  .btn.btn-background-slide:hover,
+  .btn.btn-background-slide:focus{
+    color: #fff;
+  }
+  
+  /* BACKGROUND-CIRCLE */
+  
+  .btn.btn-background-circle::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #eee;
+    z-index: -1;
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+    transform: scale(1.5);
+  }
+  .btn.btn-background-circle:hover::before,
+  .btn.btn-background-circle:focus::before{
+    transform: scale(0);
+  }
+  .btn.btn-background-circle{
+    z-index: 1;
+    overflow: hidden;
+    background-color: #4070F6;
+    color: #000;
+    transition: color 500ms ease-in-out;
+  }
+  .btn.btn-background-circle:hover,
+  .btn.btn-background-circle:focus{
+    color: #fff;
+  }
+  
+  /* BORDER-UNDERLINE */
+  
+  .btn.btn-border-underline::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--border-size);
+    background-color: #4070F6;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: scaleX(0);
+  /*   transform-origin: left; */
+    transition: transform 300ms ease-in-out;
+  }
+  .btn.btn-border-underline:hover::before,
+  .btn.btn-border-underline:focus::before{
+    transform: scaleX(1);
+  }
+  
+  /* Bootstrap Buttons */
+  
+  /* Primary Btn */
+  .btn.btn-primary{
+    background-color: #007BFF;
+    color: #FEFEFE;
+  }
+  .btn.btn-primary:hover{
+    background-color: rgb(0,100,255);
+  }
+  .btn.btn-primary:focus{
+    border: 3px solid #9DCCFF;
+  }
+  
+  /* Secondary Btn */
+  .btn.btn-secondary{
+    background-color: rgb(108,117,125);
+    color: #FEFEFE;
+  }
+  .btn.btn-secondary:hover{
+    background-color: rgb(108,100,125);
+  }
+  .btn.btn-secondary:focus{
+    border: 3px solid rgb(189,193,196);
+  }
+  
+  /* Success Btn */
+  .btn.btn-success{
+    background-color: rgb(40,167,69);
+    color: #FEFEFE;
+  }
+  .btn.btn-success:hover{
+    background-color: rgb(40,150,69);
+  }
+  .btn.btn-success:focus{
+    border: 3px solid rgb(172,221,184);
+  }
+  
+  /* Danger Btn */
+  .btn.btn-danger{
+    background-color: rgb(220,53,69);
+    color: #FEFEFE;
+  }
+  .btn.btn-danger:hover{
+    background-color: rgb(220,0,69);
+  }
+  .btn.btn-danger:focus{
+    border: 3px solid rgb(239,164,171);
+  }
+  
+  /* Warning Btn */
+  .btn.btn-warning{
+    background-color: rgb(255,193,7);
+    color: #FEFEFE;
+  }
+  .btn.btn-warning:hover{
+    background-color: rgb(255,160,7);
+  }
+  .btn.btn-warning:focus{
+    border: 3px solid rgb(255,231,160);
+  }
+  
+  /* Info Btn */
+  .btn.btn-info{
+    background-color: rgb(23,162,184);
+    color: #FEFEFE;
+  }
+  .btn.btn-info:hover{
+    background-color: rgb(23,132,184);
+  }
+  .btn.btn-info:focus{
+    border: 3px solid rgb(166,219,228);
+  }
+  
+  /* Light Btn */
+  .btn.btn-light{
+    background-color: rgb(248,249,250);
+    color: rgb(79,83,86);
+  }
+  .btn.btn-light:hover{
+    background-color: #eee;
+  }
+  .btn.btn-light:focus{
+    border: 3px solid rgb(248,249,250);
+  }
+  
+  /* Dark Btn */
+  .btn.btn-dark{
+    background-color: rgb(52,58,64);
+    color: #FEFEFE;
+  }
+  .btn.btn-dark:hover{
+    background-color: rgb(52,10,64);
+  }
+  .btn.btn-dark:focus{
+    border: 3px solid rgb(177,179,182);
+  }
+  
+  /* Bootstrap Outline Buttons */
+  
+  /* Outline Primary Btn */
+  .btn.btn-outline-primary{
+    --bg-color: #007BFF;
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-primary:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-primary:focus{
+    border: 3px solid #9DCCFF;
+  }
+  
+  /* Outline Secondary Btn */
+  .btn.btn-outline-secondary{
+    --bg-color: rgb(108,117,125);
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-secondary:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-secondary:focus{
+    border: 3px solid rgb(189,193,196);
+  }
+  
+  /* Outline Success Btn */
+  .btn.btn-outline-success{
+    --bg-color: rgb(40,167,69);
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-success:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-success:focus{
+    border: 3px solid rgb(172,221,184);
+  }
+  
+  /* Outline Danger Btn */
+  .btn.btn-outline-danger{
+    --bg-color: rgb(220,53,69);
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-danger:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-danger:focus{
+    border: 3px solid rgb(239,164,171);
+  }
+  
+  /* Outline Warning Btn */
+  .btn.btn-outline-warning{
+    --bg-color: rgb(255,193,7);
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-warning:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-warning:focus{
+    border: 3px solid rgb(255,231,160);
+  }
+  
+  /* Outline Info Btn */
+  .btn.btn-outline-info{
+    --bg-color: rgb(23,162,184);
+    --accent-color: #FEFEFE;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-info:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-info:focus{
+    border: 3px solid rgb(166,219,228);
+  }
+  
+  /* Outline Light Btn */
+  .btn.btn-outline-light{
+    --bg-color: #eee;
+    --accent-color: #333;
+    background-color: #fefefe;
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-light:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-light:focus{
+    border: 3px solid rgb(248,249,250);
+  }
+  
+  /* Outline Dark Btn */
+  .btn.btn-outline-dark{
+    --bg-color: rgb(52,58,64);
+    --accent-color: #fff;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+  }
+  .btn.btn-outline-dark:hover{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+  }
+  .btn.btn-outline-dark:focus{
+    border: 3px solid rgb(177,179,182);
+  }
+  
+  /* Button Sizes */
+  
+  .btn-sm{
+    padding: 0.5rem 0.5em;
+  }
+  
+  .btn-lg{
+    font-size: 1em;
+    padding: 1rem 1em;
+  }
+  
+  .block-level-container{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.5);
+  }
+  
+  .btn-block{
+    display: block;
+    width: calc(100% - 2rem); /* margin on left and right = 2rem; */
+  }
+  
+  /* Practice */
+  
+  
