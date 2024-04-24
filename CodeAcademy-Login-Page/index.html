@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAcademy-Login-Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Log in to CodeAcademy</h1>
+        <form action="" method="POST" id="login-form">
+            <div class="form-control">
+                <label for="userName">Email or Username</label>
+                <input type="text " class="form-group-ele" id="userName">
+            </div>
+            <div class="form-control">
+                <label for="passWord">Password</label>
+                <input type="password" name="" id="passWord" class="form-group-ele">
+            </div>
+            <a href="#" class="forgot-password">I forgot my password</a>
+            <Button type="submit">Log In</Button>
+        </form>
+        <p>Login with another account</p>
+        <div class="images-container">
+            <img src="1.png" alt="">
+            <img src="2.png" alt="">
+            <img src="3.png" alt="">
+            <img src="4.png" alt="">
+            <img src="5.jpg" alt="">
+        </div>
+        <a href="#">Not a member yet ? SignUp here</a>
+    </div>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", (e) => e.preventDefault());
+    </script>
+</body>
+
+</html>
