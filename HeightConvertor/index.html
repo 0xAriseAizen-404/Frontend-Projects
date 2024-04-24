@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Convertor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #1E1E1E;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            border-radius: 12px;
+            padding: 1.5rem 3rem;
+            background-color: #454545;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        h1{
+            color: #FFFFFF;
+            font-size: 2rem;
+            margin: 0 1rem 1.5rem;
+        }
+        input[type="number"]{
+            background-color: #e1ffff;
+            color: #1E1E1E;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            margin: 1rem;
+            font-size: 18px;
+        }
+        input[type="number"]:focus{
+            outline: none;
+        }
+        input[type="submit"]{
+            /* display: block; */
+            padding: 10px 20px;
+            color: #e1ffff;
+            background: linear-gradient(to right,#006fff,#0085ff,#69b4ff);
+            border: none;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 1rem;
+        }
+        input[type="submit"]:hover{
+            cursor: pointer;
+            background: #006fff;
+        }
+        #result{
+            font-size: 18px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Height Convertor</h1>
+        <label for="#feet-input">Feet : </label>
+        <input type="number" id="feet-input" min="0">
+        <br>
+        <label for="#inch-input">Inch : </label>
+        <input type="number" min="0" id="inch-input">
+        <br>
+        <input type="submit" id="submit" value="Convert to CM">
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById("submit").addEventListener('click', ()=>{
+            const inputFeet = parseInt(document.getElementById("feet-input").value);
+            const inputInch = parseInt(document.getElementById("inch-input").value);
+            // console.log(inputFeet);
+            // console.log(inputInch);
+            // console.log(inputFeet*12);
+            // console.log(inputFeet*12 + inputInch);
+            document.getElementById("result").innerHTML = ((inputFeet * 12) + inputInch ) * 2.54 + " CM";
+        });
+    </script>
+</body>
+</html>
