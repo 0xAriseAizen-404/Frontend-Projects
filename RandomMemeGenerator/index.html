@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #f5f5f5;
+      }
+      .container {
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px #f2f2f2;
+      }
+      img{
+        cursor: pointer;
+        margin-top: 2rem;
+        width: 30rem;
+        height: 30rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Random Meme Generator</h1>
+      <div class="meme-con">
+        <img src="" alt="" />
+      </div>
+    </div>
+    <script>
+      const img = document.getElementsByTagName("img")[0];
+
+      async function rmg() {
+        let resource = await fetch("https://meme-api.com/gimme");
+        // console.log(resource);
+        let jsonOb = await resource.json();
+        let url = jsonOb.url;
+        // console.log(url);
+        img.src = url;
+      }
+      rmg();
+      let timer = setInterval(rmg, 2000);
+      img.addEventListener("mouseenter", () => {
+        clearInterval(timer);
+        // console.log(1)
+      });
+      img.addEventListener("mouseleave", () => {
+        timer = setInterval(rmg, 2000);
+      });
+    </script>
+  </body>
+</html>
