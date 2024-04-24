@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueLock-Card</title>
+    <script src="https://kit.fontawesome.com/96a2e1e50a.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #edebeb;
+        }
+        .container{
+            background-color: #1b2730;
+            padding: 7px;
+            border-radius: 12px;
+            color: #fff;
+            line-height: 1.5rem;
+        }
+        img{
+            background-color: #FFF;
+            border-radius: 12px;
+        }
+        .description{
+            padding: 10px;
+        }
+        .description .rating-stars{
+            margin-bottom: 5px;
+        }
+        .watch-con{
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .watch-con a{
+            padding: 7px 20px;
+            color: #212121;
+            font-weight: bold;
+            background-color: #c2c2c2;
+            border-radius: 12px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .watch-con a:hover,
+        .watch-con a:focus{
+            background-color: #919191;
+        }
+        .watch-con i{
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .watch-con i:focus{
+            color: #091921;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="ResImg/BlueLockTeamZ.jpg" width="250px" height="200px">
+        <div class="description">
+            <h3>Blue Lock</h3>
+            <p>Season 1 ( 24 episodes )</p>
+            <p class="rating-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <hr>
+            <div class="watch-con">
+                <a href="#">Watch</a>
+                <i class="fa-solid fa-bookmark"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
