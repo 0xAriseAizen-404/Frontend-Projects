@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #212121;
+            overflow: hidden;
+        }
+
+        span {
+            background-image: url("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/heart-512.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: animate 6s linear;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                filter: hue-rotate(0);
+            }
+
+            100% {
+                transform: translate(-50%, -5000%);
+                opacity: 0;
+                filter: hue-rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <script>
+        bodyEle = document.querySelector('body');
+        bodyEle.addEventListener("mousemove", (event) => {
+            const xPos = event.offsetX;
+            const yPos = event.offsetY;
+            const spanEle = document.createElement('span');
+            spanEle.style.left = xPos + "px";
+            spanEle.style.top = yPos + "px";
+            const size = Math.random() * 100;
+            spanEle.style.width = size + "px";
+            spanEle.style.height = size + "px";
+            bodyEle.appendChild(spanEle);
+            setTimeout(() => {
+                spanEle.remove();
+            }, 3000);
+        })
+    </script>
+</body>
+
+</html>
