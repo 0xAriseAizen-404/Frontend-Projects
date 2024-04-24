@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  & .left-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    & > div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 3rem;
+      color: #212121;
+      & h1 {
+        margin-bottom: 0.75rem;
+        margin-top: -2rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    transition: transform 0.5s ease-in-out;
+  }
+  & .right-slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 35%;
+    bottom: 0;
+    width: 65%;
+    height: 100%;
+    & > div {
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    transition: transform 0.5s ease-in-out;
+  }
+  .buttons-container button {
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    padding: 0.75rem;
+    background-color: #fff;
+    color: #aaa;
+    font-size: 18px;
+    &:hover {
+      cursor: pointer;
+      color: #212121;
+    }
+  }
+  & .down-btn {
+    transform: translateX(-100%);
+  }
+  & .up-btn {
+    transform: translateY(-100%);
+  }
+}
