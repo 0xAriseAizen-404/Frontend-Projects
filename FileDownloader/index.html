@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File-Downloader</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrapper {
+        width: 340px;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        & form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          & .form-group-ele {
+            width: 100%;
+
+            & input {
+              width: 100%;
+              padding: 0.75rem 1rem;
+              font-size: 1.1rem;
+              border: none;
+              border-radius: 4px;
+
+              &:focus {
+                outline: none;
+              }
+
+              &[type="text"] {
+                border: 2px solid #eee;
+
+                &:focus {
+                  border-color: #091921;
+                }
+              }
+
+              &[type="submit"] {
+                cursor: pointer;
+                background-color: #091921;
+                color: #fff;
+                letter-spacing: 1px;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2 class="title">File Downloader</h2>
+      <p>
+        Paste URL of image, video, or pdf to download. This tool is made with
+        vanilla javascript
+      </p>
+      <form action="#">
+        <div class="form-group-ele">
+          <input type="text" id="input-url" />
+        </div>
+        <div class="form-group-ele">
+          <input type="submit" value="Download File" />
+        </div>
+      </form>
+    </div>
+    <script>
+      const downloadBtn = document.querySelector(
+        ".wrapper form .form-group-ele input[type='submit']"
+      );
+      const inputEle = document.querySelector(
+        ".wrapper form .form-group-ele input[type='text']"
+      );
+
+      const fetchUrl = (url) => {
+        fetch(url)
+          .then((res) => res.blob())
+          .then((file) => {
+            let tempUrl = URL.createObjectURL(file);
+            let aTag = document.createElement("a");
+            aTag.href = tempUrl;
+            aTag.download = url.replace(/^.*[\\\/]/, "");
+            document.body.appendChild(aTag);
+            aTag.click();
+            aTag.remove();
+            URL.revokeObjectURL(tempUrl);
+            downloadBtn.value = "Download File";
+          })
+          .catch(() => {
+            downloadBtn.value = "Download File";
+            alert("Failed to download file!");
+          });
+      };
+
+      downloadBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        downloadBtn.value = "Downloading File...";
+        fetchUrl(inputEle.value);
+      });
+    </script>
+  </body>
+</html>
